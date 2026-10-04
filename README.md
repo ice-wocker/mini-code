@@ -1,6 +1,6 @@
 # mini-code
 
-[![CI](https://github.com/yourname/mini-code/actions/workflows/ci.yml/badge.svg)](https://github.com/yourname/mini-code/actions/workflows/ci.yml)
+[![CI](https://github.com/ice-wocker/mini-code/actions/workflows/ci.yml/badge.svg)](https://github.com/ice-wocker/mini-code/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Node](https://img.shields.io/badge/node-%3E%3D18-blue.svg)](package.json)
 
@@ -29,13 +29,11 @@
 ## 安装
 
 ```bash
-git clone https://github.com/yourname/mini-code.git
+git clone https://github.com/ice-wocker/mini-code.git
 cd mini-code
 npm ci
 npm link   # 可选，之后可直接用 mini-code 命令
 ```
-
-记得把上面 `yourname` 换成你自己的 GitHub 用户名。
 
 ## 快速开始
 
