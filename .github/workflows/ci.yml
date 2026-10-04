@@ -1,0 +1,28 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [18, 20, 22]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+      - run: npm ci
+      # ui.js / components.js 含 JSX，需经 jsx-loader 加载（test/check.mjs 已覆盖），此处只 check 纯 JS
+      - run: node --check src/index.js
+      - run: node --check src/agent.js
+      - run: node --check src/tools.js
+      - run: node --check src/config.js
+      - run: node --check src/session.js
+      - run: node --check src/sandbox.js
+      - run: node --check src/diff.js
+      - run: npm run check
